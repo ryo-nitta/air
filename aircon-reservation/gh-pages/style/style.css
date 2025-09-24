@@ -1,0 +1,179 @@
+/* リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  padding: 0px;
+}
+
+
+/* ヘッダー */
+header {
+  display: flex; /* 横並び配置 */
+  justify-content: space-between; /* 左にロゴ、右にナビ配置 */
+  align-items: center; /* 縦中央揃え */
+  padding: 15px 10px; /* 内側余白を設定 */
+  background: #0077b6; /* ヘッダー背景をブルーに */
+  color: #fff; /* 文字色を白に */
+}
+
+header h1 {
+  font-size: 1.8rem; /* 見出しサイズ */
+  margin: 0; /* 余白なし */
+  background: #0077b6; /* 背景を黄色に */
+  color: #ffeb3b; /* 文字色を濃いグレーに */
+  padding: 5px 10px; /* 内側余白 */
+  border-radius: 6px; /* 角を丸く */
+  display: inline-block; /* 背景を文字の範囲に収める */
+}
+
+nav {
+  display: flex; /* 横並び */
+  gap: 20px; /* 項目間の余白 */
+}
+
+nav a {
+  text-decoration: none; /* 下線を消す */
+  color: #fff; /* リンク文字色を白に */
+  font-weight: bold; /* 太字 */
+  transition: color 0.3s ease; /* ホバー時に滑らかに色が変わる */
+  margin: 0 5px;
+}
+
+nav a:hover {
+  color: #ffd166; /* ホバー時に黄色っぽく */
+}
+
+
+.menu-toggle {
+  display: none; /* PCでは非表示 */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+/*メニュー背景 */
+.menu-overlay {
+  display: none; /* デフォルト非表示 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* 半透明黒 */
+  z-index: 5; /* navより下に表示 */
+}
+
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #444;
+}
+
+/* ラベル＋入力を横並びにする */
+form .form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+form .form-group label {
+  width: 120px; /* ラベルの固定幅 */
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+form .form-group input,
+form .form-group select,
+form .form-group textarea {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* 送信ボタン */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background: #0056b3;
+}
+
+/* スマホでは縦並びに切り替え */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  form .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  form .form-group label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  button[type="submit"] {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}

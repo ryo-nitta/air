@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>エアコン予約フォーム</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+
+<body>
+    <header>
+      <h1>エアクリ</h1>
+        <nav>
+            <a href="#">ホーム</a>
+            <a href="#">事例</a>
+            <a href="#">サービス</a>
+            <a href="#">お問い合わせ</a>
+        </nav>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-overlay"></div> <!-- 半透明背景 -->
+        </header>
+
+  <div class="container">
+    <h1>エアコン清掃 予約フォーム</h1>
+    <form action="/reserve" method="post">
+      <div class="form-group">
+        <label>氏名：</label>
+        <input type="text" name="name" required placeholder="例: 山田太郎">
+      </div>
+
+      <div class="form-group">
+        <label>メール：</label>
+        <input type="email" name="email" required placeholder="例: xxxxxx@gmail.com">
+      </div>
+
+      <div class="form-group">
+        <label>電話番号：</label>
+        <input type="tel" name="phone" required placeholder="例: 090-1234-5678">
+      </div>
+
+      <div class="form-group">
+        <label>住所：</label>
+        <input type="text" name="address" required placeholder="例: 東京都新宿区〇〇">
+      </div>
+
+      <div class="form-group">
+        <label>ご希望日：</label>
+        <input type="date" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label>開始時刻：</label>
+        <select name="startTime" id="startTime" required>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>メニュー：</label>
+        <select name="menu" required>
+          <option value="1">エアコン1台（90分）</option>
+          <option value="2">エアコン2台（120分）</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>備考(任意)：</label>
+        <textarea name="message" placeholder="駐車場の有無/ペット・アレルギー/作業上の注意点など"></textarea>
+      </div>
+
+      <button type="submit">予約送信</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
