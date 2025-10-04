@@ -8,10 +8,12 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-// Google Sheets 認証
+// Google Sheets 認証（環境変数から JSON を読み込み）
+const serviceAccount = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON);
+
 const auth = new google.auth.GoogleAuth({
-  keyFile: 'my-project-22n-2eb41c12c470.json',
-  scopes: ['https://www.googleapis.com/auth/spreadsheets']
+  credentials: serviceAccount,
+  scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
 
 const SPREADSHEET_ID = process.env.SHEET_ID;
