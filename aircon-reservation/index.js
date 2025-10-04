@@ -142,6 +142,7 @@ app.get('/reserved-slots', async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 3018, () => {
-  console.log(`Server running on http://localhost:${process.env.PORT || 3018}`);
+const PORT = process.env.PORT || 3018;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
